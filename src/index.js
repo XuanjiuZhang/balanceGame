@@ -50,8 +50,21 @@ function create ()
   const balls = []
   for (var i = 0; i < 12; i++)
   {
-    const addedImage = launch.bind(this, i)();
-    balls.push(addedImage)
+    const addedSprite = launch.bind(this, i)();
+    balls.push(addedSprite)
+    addedSprite.on('pointerdown', function (pointer) {
+      this.setTint(0xff0000);
+      console.log('??')
+    });
+  
+    addedSprite.on('pointerout', function (pointer) {
+      this.clearTint();
+      console.log('??')
+    });
+  
+    addedSprite.on('pointerup', function (pointer) {
+      this.clearTint();
+    });
   }
 
   var equal = this.add.image(400, 500, 'equal');
@@ -86,6 +99,6 @@ function create ()
 
 function launch (i)
 {
-  var image = this.add.image(48 + i * 64, 32, 'dude');
-  return image
+  var sprite = this.add.sprite(48 + i * 64, 32, 'dude').setInteractive();
+  return sprite
 }
