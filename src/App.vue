@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    jklfjsdklfklsdf
   </div>
 </template>
 
@@ -13,6 +12,7 @@ export default {
   },
   name: 'App',
   mounted () {
+    
   },
 }
 </script>
