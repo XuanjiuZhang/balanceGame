@@ -53,7 +53,7 @@ function create ()
     balls.push(addedSprite)
     addedSprite.on('pointerdown', function (pointer) {
       this.setTint(0xff0000);
-      console.log('??', this)
+      console.log('?? rebase test', this)
     });
   
     addedSprite.on('pointerout', function (pointer) {
